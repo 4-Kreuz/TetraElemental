@@ -34,7 +34,7 @@ body.diff {
   color: #ffffff;
   font-size: 16px;
   text-shadow: 2px 2px 2px #444444;
-  background-color: #74325c;
+  background-color: #440000;
 }
 
 .tr_normal {
@@ -88,5 +88,5 @@ body.diff {
 }
 
 .tableflame tr.tr_normal:hover {
-  background-color: #44ff44;
+  background-color: #999999;
 }
