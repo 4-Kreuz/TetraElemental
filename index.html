@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-<title>PDB式難易度表作成例2</title>
+<title>PDB式難易度表作成例3</title>
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
@@ -126,7 +126,7 @@ function makeBMSTable(info, mark, order) {
 
 
 
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>Title</td><td align='center'>Artist</td><td align='center'>差分</td><td align='center'>Comment</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>Title</td><td align='center'>Artist</td><td align='center'>差分</td><td align='center'>Notes</td><td align='center'>Comment</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
@@ -211,13 +211,16 @@ $("<td width='2%' align='center'></td>").appendTo(str);
  }
  }
 
+      // Notes
+        $("<td width='4%' align='center'>" + info[i].notes + "</td>").appendTo(str);
+
       // コメント
         $("<td width='25%'>" + info[i].comment + "</div></td>").appendTo(str);
         str.appendTo(obj);
         count++;
     }
 
-    
+
     // 最後の区切り処理
 	// マークが抜け落ちてたので追加
     if (obj_sep != null) {
