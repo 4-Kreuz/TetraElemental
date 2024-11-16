@@ -22,7 +22,7 @@
 
 <!--　　　　　ここから難易度表本体　　　　　-->
 <div class="tableflame">
-<table align="center" cellspacing="1" cellpadding=2　border="0" bgcolor="#000000" id="table_int">
+<table align="center" cellspacing="1" cellpadding=2　border="0" bgcolor="#FFFFFF" id="table_int">
 </table>
 </div>
 
@@ -167,7 +167,7 @@ function makeBMSTable(info, mark, order) {
         }
 
         // レベル表記
-        $("<td width='2%' align='center'>" + mark + x + "</td>").appendTo(str);
+        $("<td width='1%' align='center'>" + mark + x + "</td>").appendTo(str);
 
         // タイトル
         $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
