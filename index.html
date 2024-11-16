@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja"><head>
+<title>○○難易度表</title>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta name="bmstable" content="header.json">
+<link href="style.css" rel="stylesheet" type="text/css" media="screen,print">
+<script src="jquery-2.0.2.min.js"></script>
+</head>
+<body class="diff" style=""><script type="text/javascript" charset="utf-8" src="//asumi.shinobi.jp/encount"></script><script type="text/javascript" charset="utf-8" src="//cnobi.jp/v1/asumi/arms/1.17.46"></script><div style="text-align: center;"><div style="display: inline-block; position: relative; z-index: 9999;"><script type="text/javascript" charset="utf-8" src="//asumi.shinobi.jp/fire?f=435"></script><div id="asumi-frame-435-1792" style="height: 280px;"><script type="text/javascript">
+  var passBackId = 94;
+  var code =
+    '<scr'+'ipt async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></scr'+'ipt>' +
+    '<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-3206922088443137" data-ad-slot="1467175996"></ins>' +
+    '<scr'+'ipt>' +
+    '(adsbygoogle = window.adsbygoogle || []).push({});' +
+    '</scr'+'ipt>';
+
+  document.write ("<scr" + "ipt type='text/javascript' src='//gad.shinobi.jp/?code=" + encodeURIComponent(code) + "&location=" + encodeURIComponent(document.location.href) + "&passBackId="+passBackId +"'></scr" + "ipt>");
+</script><script type="text/javascript" src="//gad.shinobi.jp/?code=%3Cscript%20async%20src%3D%22%2F%2Fpagead2.googlesyndication.com%2Fpagead%2Fjs%2Fadsbygoogle.js%22%3E%3C%2Fscript%3E%3Cins%20class%3D%22adsbygoogle%22%20style%3D%22display%3Ainline-block%3Bwidth%3A336px%3Bheight%3A280px%22%20data-ad-client%3D%22ca-pub-3206922088443137%22%20data-ad-slot%3D%221467175996%22%3E%3C%2Fins%3E%3Cscript%3E(adsbygoogle%20%3D%20window.adsbygoogle%20%7C%7C%20%5B%5D).push(%7B%7D)%3B%3C%2Fscript%3E&amp;location=https%3A%2F%2Fbmsnormal2.syuriken.jp%2Fsample%2Ftable_sample.html&amp;passBackId=94"></script><script type="text/javascript" charset="utf-8" src="//asumi.shinobi.jp/fire?f=94"></script><div id="asumi-frame-94-1241" style="height: 250px;"><script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script>
+<script type="text/javascript">
+Criteo.DisplayAd({
+    "zoneid": 1346562,
+    "async": false});
+</script><script type="text/javascript" src="https://cas.criteo.com/delivery/ajs.php?ptv=159&amp;zoneid=1346562&amp;bundle=-dvSel9sJTJGY2huSEZzTkswT1NaQ25laDJiaVh0NnY5RmlnVFZqVGZ2dWxJdGk2dkFJcFVzeHR5TG1pWTNwRmhVNFNCU2ZzT3llV1F2ayUyQkpjdEZ1VlBmVCUyQmtldHIlMkJRUWozSzV3N3ZCbUttRW85UUs5SUllb0JqSTJZbk1XQiUyQm5ZbkFTR2xBQiUyQnJJbSUyQkE0MnVuNHdIdUhoQWdRb1MxaUcyZnYlMkI3bVJGMHF6UjQybmhvM2l5R0lzUnU4WUpYRDNEcFBqMEsyRyUyRk5BSDN3aUNTRFNVamxuVDVINTNRRGU2ZlI2d2JkaFp2VnZoM1o5QzFtdiUyQnBlcVFCSEVyaTRUcUc0MGRsRFhNd2c3d29kekhsbWNyaW1xeWJWNG13aFk4S1pCb1FHeDZQcnpMNDczNzJHT0ZIbXNHdGVTMERlQ1FtdW8zbE1n&amp;cb=78676827886&amp;nodis=1&amp;charset=Shift_JIS&amp;dc=3&amp;atfr=1&amp;loc=https%3A%2F%2Fbmsnormal2.syuriken.jp%2Fsample%2Ftable_sample.html"></script></div>
+</div><script type="text/javascript" charset="utf-8" src="/__sys__inactive_message.js"></script><p style="font-size: 10px; padding: 3px; margin:0; text-align: center; color: #aaa; background:#fffffc;">[PR] この広告は3ヶ月以上更新がないため表示されています。<br>ホームページを更新後24時間以内に表示されなくなります。</p></div></div>
+<p style="color:#ffffee">次期難易度表フォーマットに対応した表作成用ページです。<br>
+metaタグ(name="bmstable")からヘッダ部のURL(header.json)を取得し、ヘッダ部からデータ部URL(score.json)と記号を抽出します。<br>
+その後、データ部を読み込み、テーブルを作成しています。<br>
+<br>
+改変、再使用はご自由にどうぞ。
+</p>
+<!--　　　　　ここから難易度表本体　　　　　-->
+<div class="tableflame">
+<table align="center" cellspacing="1" cellpadding="2　border=&quot;0&quot;" bgcolor="#000000" id="table_int">
+</table>
+</div>
+<script language="javascript" type="text/javascript">
+$(document).ready(function(){
+	$.getJSON($("meta[name=bmstable]").attr("content"), function(header){
+		$.getJSON(header.data_url, function(information){
+			makeBMSTable(information,header.symbol);
+		});
+	});
+});
+
+function makeBMSTable(info, mark) {
+    var x = "";
+    var ev = "";
+    var count = 0;
+    var obj = $("#table_int");
+    // 表のクリア
+    obj.html("");
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>タイトル</td><td align='center'>本体</td><td align='center'>差分</td><td align='center'>コメント</td></tr>").appendTo(obj);
+    var obj_sep = null;
+    for (var i = 0; i < info.length; i++) {
+        // 難度ごとの区切り
+        if (x != info[i].level) {
+            // 前の区切りに譜面数、平均密度を追加
+          	if (obj_sep != null) {
+                obj_sep.html("<td colspan='6' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+            }
+            obj_sep = $("<tr class='tr_separate' id='" + mark + info[i].level + "'></tr>");
+            obj_sep.appendTo(obj);
+            count = 0;
+            x = info[i].level;
+        }
+        // 本文
+        var str = $("<tr class='tr_normal'></tr>");
+        if(info[i].state == 1) {
+        str = $("<tr class='tr_new'></tr>");
+        }
+        if(info[i].state == 2) {        
+        str = $("<tr class='tr_update'></tr>");
+        }
+        // レベル表記
+        $("<td width='5%'>" + mark + x + "</td>").appendTo(str);
+        // タイトル
+        $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
+        // アーティスト
+        var astr = "";
+        if(info[i].url != null) {
+        	if(info[i].artist != null) {
+        		astr = "<a href='" + info[i].url + "'>" + info[i].artist + "</a>";
+        	} else {
+        		astr = "<a href='" + info[i].url + "'>" + info[i].url + "</a>";
+        	}
+        } else {
+        	if(info[i].artist != null) {
+        		astr = info[i].artist;
+        	}
+        }
+        if(info[i].url_pack != null) {
+        	if(info[i].name_pack != null) {
+        		astr += "<br />(<a href='" + info[i].url_pack + "'>" + info[i].name_pack + "</a>)";
+        	} else {
+        		astr += "<br />(<a href='" + info[i].url_pack + "'>" + info[i].url_pack + "</a>)";
+        	}
+        } else {
+        	if(info[i].name_pack != null) {
+        		astr += "<br />(" + info[i].name_pack + ")";
+        	}
+        }
+        $("<td width='20%'>" + astr + "</td>").appendTo(str);
+        // 差分
+        if(info[i].url_diff != null) {
+        	if(info[i].name_diff != null) {
+	        $("<td width='10%'><a href='" + info[i].url_diff + "'>" + info[i].name_diff + "</a></td>").appendTo(str);
+        	} else {
+	        $("<td width='10%'><a href='" + info[i].url_diff + "'>" + info[i].url_diff + "</a></td>").appendTo(str);
+        	}
+        } else {
+        	if(info[i].name_diff != null) {
+	        $("<td width='10%'>" + info[i].name_diff + "</td>").appendTo(str);
+        	} else {
+	        $("<td width='10%'></td>").appendTo(str);
+        	}
+        }
+        // コメント
+        $("<td width='15%'>" + info[i].comment + "</td>").appendTo(str);
+        str.appendTo(obj);
+        count++;
+    }
+    // 最後の区切り処理
+    if (obj_sep != null) {
+        obj_sep.html("<td colspan='6' align='center'>" + "<b>" + mark + x + " (" + count + "譜面)</b></td>");
+    }
+}
+</script>
+<div style="text-align: center;"><div style="display: inline-block; position: relative; z-index: 9999;"><script type="text/javascript" charset="utf-8" src="//asumi.shinobi.jp/fire?f=434"></script><div id="asumi-frame-434-1791"><script type="text/javascript">
+  var passBackId = 43;
+  var code =
+    '<scr'+'ipt async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></scr'+'ipt>' +
+    '<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-3206922088443137" data-ad-slot="8990442790"></ins>' +
+    '<scr'+'ipt>' +
+    '(adsbygoogle = window.adsbygoogle || []).push({});' +
+    '</scr'+'ipt>';
+
+  document.write ("<scr" + "ipt type='text/javascript' src='//gad.shinobi.jp/?code=" + encodeURIComponent(code) + "&location=" + encodeURIComponent(document.location.href) + "&passBackId="+passBackId +"'></scr" + "ipt>");
+</script><script type="text/javascript" src="//gad.shinobi.jp/?code=%3Cscript%20async%20src%3D%22%2F%2Fpagead2.googlesyndication.com%2Fpagead%2Fjs%2Fadsbygoogle.js%22%3E%3C%2Fscript%3E%3Cins%20class%3D%22adsbygoogle%22%20style%3D%22display%3Ainline-block%3Bwidth%3A336px%3Bheight%3A280px%22%20data-ad-client%3D%22ca-pub-3206922088443137%22%20data-ad-slot%3D%228990442790%22%3E%3C%2Fins%3E%3Cscript%3E(adsbygoogle%20%3D%20window.adsbygoogle%20%7C%7C%20%5B%5D).push(%7B%7D)%3B%3C%2Fscript%3E&amp;location=https%3A%2F%2Fbmsnormal2.syuriken.jp%2Fsample%2Ftable_sample.html&amp;passBackId=43"></script><script type="text/javascript" charset="utf-8" src="//asumi.shinobi.jp/fire?f=43"></script><div id="asumi-frame-43-3312" style="width: 300px; height: 250px;">    <script async="" src="//cnobi.jp/v1/asumi/prebid/2.5.1-1.js"></script>
+    <script>
+        var adUnitID = "postbid_iframe";
+        var FLOOR_PRICE_USD = 0.65;
+        var ASUMI_ID = 43;
+        var PREBID_TIMEOUT = 1000;
+        var adUnits = [{
+            code: adUnitID,
+            mediaTypes: {
+            banner: {
+                sizes: [[300, 250]]
+            }
+       },
+       bids: [{
+           bidder: "rubicon",
+           params: {
+               accountId: 20272,
+               siteId: 242464,
+               zoneId: 1197088
+           }
+           }, {
+             bidder: "criteo",
+             params: {
+                 zoneId: 1389864
+             }
+         }, {
+             bidder: "rtbhouse",
+             params: {
+                 region: "prebid-asia",
+                 publisherId: "VwUhkz4IeGJVRXks0xX7"
+             }
+       }]
+     }];
+
+     var pbjs = pbjs || {};
+     pbjs.que = pbjs.que || [];
+
+     pbjs.bidderSettings = {
+       rubicon: {
+         bidCpmAdjustment : function(bidCpm, bid){
+           return bidCpm * .95;
+         }
+       }
+     };
+
+     pbjs.que.push(function() {
+         pbjs.setConfig({ priceGranularity: "dense" });
+         pbjs.addAdUnits(adUnits);
+         pbjs.requestBids({
+             timeout: PREBID_TIMEOUT,
+             bidsBackHandler: function() {
+                 var iframe = document.getElementById(adUnitID);
+                 var iframeDoc = iframe.contentWindow.document;
+                 var adServerTargeting = pbjs.getAdserverTargetingForAdUnitCode(adUnitID);
+
+                 var adID = adServerTargeting["hb_adid"];
+                 var bidCPM = adServerTargeting["hb_pb"];
+                 if (adID && Number(bidCPM) > FLOOR_PRICE_USD) {
+                     pbjs.renderAd(iframeDoc, adID);
+                 } else {
+                     iframe.remove();
+                     setTimeout(function() { (window.__asumi__ || window.parent.__asumi__).passback.callback[ASUMI_ID](true) })
+                 }
+             }
+         });
+     });
+    </script>
+
+    <iframe id="postbid_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" width="0" height="0">
+    </iframe></div>
+</div></div></div>
+
+<iframe src="https://gum.criteo.com/syncframe?origin=publishertag&amp;topUrl=bmsnormal2.syuriken.jp#{&quot;lwid&quot;:{&quot;origin&quot;:0},&quot;bundle&quot;:{&quot;value&quot;:&quot;-dvSel9sJTJGY2huSEZzTkswT1NaQ25laDJiaVh0NnY5RmlnVFZqVGZ2dWxJdGk2dkFJcFVzeHR5TG1pWTNwRmhVNFNCU2ZzT3llV1F2ayUyQkpjdEZ1VlBmVCUyQmtldHIlMkJRUWozSzV3N3ZCbUttRW85UUs5SUllb0JqSTJZbk1XQiUyQm5ZbkFTR2xBQiUyQnJJbSUyQkE0MnVuNHdIdUhoQWdRb1MxaUcyZnYlMkI3bVJGMHF6UjQybmhvM2l5R0lzUnU4WUpYRDNEcFBqMEsyRyUyRk5BSDN3aUNTRFNVamxuVDVINTNRRGU2ZlI2d2JkaFp2VnZoM1o5QzFtdiUyQnBlcVFCSEVyaTRUcUc0MGRsRFhNd2c3d29kekhsbWNyaW1xeWJWNG13aFk4S1pCb1FHeDZQcnpMNDczNzJHT0ZIbXNHdGVTMERlQ1FtdW8zbE1n&quot;,&quot;origin&quot;:3},&quot;optout&quot;:{&quot;value&quot;:false,&quot;origin&quot;:0},&quot;tld&quot;:&quot;syuriken.jp&quot;,&quot;topUrl&quot;:&quot;bmsnormal2.syuriken.jp&quot;,&quot;version&quot;:159,&quot;cw&quot;:true,&quot;lsw&quot;:true,&quot;origin&quot;:&quot;publishertag&quot;,&quot;requestId&quot;:&quot;0.7486174796615952&quot;}" width="0" height="0" frameborder="0" sandbox="allow-scripts allow-same-origin" aria-hidden="true" title="Criteo GUM iframe" style="border-width: 0px; margin: 0px; display: none;"></iframe></body></html>
