@@ -156,7 +156,7 @@ function makeBMSTable(info, mark, order) {
         }
 
         // レベル表記
-        $("<td width='6%'>" + mark + x + "</td>").appendTo(str);
+        $("<td width='10%'>" + mark + x + "</td>").appendTo(str);
   //       // 動画
 		// if(info[i].video1 != "" && info[i].video1 != null){
 		// 	// ニコニコ
@@ -180,7 +180,7 @@ function makeBMSTable(info, mark, order) {
 　　// 　　$("<td width='1%' align='center'><a href='https://www.gaftalk.com/minir/#/viewer/song/" + info[i].sha256 + "/0' target='_blank'><img src='/style/minir_logo.gif' border='0' alt='MinIR' /></a></td>").appendTo(str); <!-- /0 を /1 /2 に変更すると CN,HCN のIRページにリンクされます -->
 
         // タイトル
-        $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
+        $("<td width='30%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
         // アーティスト
         var astr = "";
         if(info[i].url != "" && info[i].url != null) {
@@ -205,7 +205,7 @@ function makeBMSTable(info, mark, order) {
         		astr += "<br />(" + info[i].name_pack + ")";
         	}
         }
-        $("<td width='20%'>" + astr + "</td>").appendTo(str);
+        $("<td width='30%'>" + astr + "</td>").appendTo(str);
         // // 差分
         // if(info[i].url_diff != "" && info[i].url_diff != null) {
         // 	if(info[i].name_diff != "" && info[i].name_diff != null) {
@@ -221,7 +221,7 @@ function makeBMSTable(info, mark, order) {
         // 	}
         // }
         // コメント
-        $("<td width='25%'>" + info[i].comment + "</div></td>").appendTo(str);
+        $("<td width='30%'>" + info[i].comment + "</div></td>").appendTo(str);
         str.appendTo(obj);
         count++;
     }
