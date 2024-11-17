@@ -164,7 +164,7 @@ function makeBMSTable(info, mark, order) {
         $("<td width='2%' align='center'>" + mark + x + "</td>").appendTo(str);
 
         // TITLE
-        $("<td width='30%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
+        $("<td width='25%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
       	// ARTIST
         var astr = "";
@@ -190,7 +190,7 @@ function makeBMSTable(info, mark, order) {
         		astr += "<br />(" + info[i].name_pack + ")";
         	}
         }
-        $("<td width='30%'>" + astr + "</td>").appendTo(str);
+        $("<td width='25%'>" + astr + "</td>").appendTo(str);
 
       	// NOTES
         $("<td width='4%' align='center'>" + info[i].notes + "</td>").appendTo(str);
@@ -204,11 +204,8 @@ function makeBMSTable(info, mark, order) {
       	// TAG
         $("<td width='4%' align='center'>" + info[i].tag + "</td>").appendTo(str);
 
-      	// COMMENT
-        $("<td width='30%'>" + info[i].comment + "</div></td>").appendTo(str);
-
 	// COMMENT
-        $("<td width='30%'>" + info[i].comment + "</div></td>").appendTo(str);
+        $("<td width='40%'>" + info[i].comment + "</div></td>").appendTo(str);
 
         str.appendTo(obj);
         count++;
