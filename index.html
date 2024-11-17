@@ -118,7 +118,7 @@ function makeBMSTable(info, mark, order) {
     // 表のクリア
     obj.html("");
 
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>Lv</td><td align='center'>Chart</td><td align='center'>Title</td><td align='center'>Artist</td><td align='center'>BPM</td><td align='center'>Notes</td><td align='center'>Total</td><td align='center'>T/N</td><td align='center'>Judge</td><td align='center'>Tag</td><td align='center'>Comment</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>Lv</td><td align='center'>Viewer</td><td align='center'>Title</td><td align='center'>Artist</td><td align='center'>BPM</td><td align='center'>Notes</td><td align='center'>Total</td><td align='center'>T/N</td><td align='center'>Judge</td><td align='center'>Tag</td><td align='center'>Comment</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
@@ -159,7 +159,7 @@ function makeBMSTable(info, mark, order) {
         // LEVEL
         $("<td width='2%' align='center'>" + mark + x + "</td>").appendTo(str);
 
-	// CHART
+	// Viewer
 　　　　$("<td width='2%' align='center' akign='center'><a href='https://bms-score-viewer.pages.dev/view?md5=" + info[i].md5 + "' target='_blank'>◆</a></td>").appendTo(str);
 
         // TITLE
