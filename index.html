@@ -19,7 +19,6 @@
 <span style="color:#ffffff;font-size: 12pt;">Lv1~Lv19 = ★1~★19、Lv20~Lv32 = st0~st12</span><br>
 </center>
 
-
 <!--　　　　　ここから難易度表本体　　　　　-->
 <div class="tableflame">
 <table align="center" cellspacing="1" cellpadding=2　border="0" bgcolor="#000000" id="table_int">
@@ -38,8 +37,6 @@ function menu(tName){
 	}
 }
 
-	
-
 $(document).ready(function(){
 	$.getJSON($("meta[name=bmstable]").attr("content"), function(header){
 		$.getJSON(header.data_url, function(information){
@@ -52,7 +49,6 @@ $(document).ready(function(){
 		});
 	});
 });
-
 
 // ソートのための引数追加
 function makeBMSTable(info, mark, order) {
@@ -122,7 +118,7 @@ function makeBMSTable(info, mark, order) {
     // 表のクリア
     obj.html("");
 
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LEVEL</td><td align='center'>TITLE</td><td align='center'>ARTIST</td><td align='center'>NOTES</td><td align='center'>TOTAL</td><td align='center'>T/N</td><td align='center'>TAG</td><td align='center'>COMMENT</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>Lv</td><td align='center'>Title</td><td align='center'>Artist</td><td align='center'>Notes</td><td align='center'>Total</td><td align='center'>T/N</td><td align='center'>Tag</td><td align='center'>Comment</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
@@ -193,19 +189,19 @@ function makeBMSTable(info, mark, order) {
         $("<td width='25%'>" + astr + "</td>").appendTo(str);
 
       	// NOTES
-        $("<td width='4%' align='center'>" + info[i].notes + "</td>").appendTo(str);
+        $("<td width='2%' align='center'>" + info[i].notes + "</td>").appendTo(str);
 
       	// TOTAL
-        $("<td width='4%' align='center'>" + info[i].total + "</td>").appendTo(str);
+        $("<td width='2%' align='center'>" + info[i].total + "</td>").appendTo(str);
 
 	// T/N
-        $("<td width='4%' align='center'>" + info[i].totalnotes + "</td>").appendTo(str);
+        $("<td width='2%' align='center'>" + info[i].totalnotes + "</td>").appendTo(str);
 
       	// TAG
-        $("<td width='4%' align='center'>" + info[i].tag + "</td>").appendTo(str);
+        $("<td width='5%' align='center'>" + info[i].tag + "</td>").appendTo(str);
 
 	// COMMENT
-        $("<td width='40%'>" + info[i].comment + "</div></td>").appendTo(str);
+        $("<td width='35%'>" + info[i].comment + "</div></td>").appendTo(str);
 
         str.appendTo(obj);
         count++;
