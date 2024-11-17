@@ -122,8 +122,7 @@ function makeBMSTable(info, mark, order) {
     // 表のクリア
     obj.html("");
 
-
-    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>Title</td><td align='center'>Artist</td><td align='center'>差分</td><td align='center'>Notes</td><td align='center'>Total</td><td align='center'>Comment</td></tr>").appendTo(obj);
+    $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LEVEL</td><td align='center'>TITLE</td><td align='center'>ARTIST</td><td align='center'>NOTES</td><td align='center'>TOTAL</td><td align='center'>T/N</td><td align='center'>TAG</td><td align='center'>COMMENT</td></tr>").appendTo(obj);
     var obj_sep = null;
     for (var i = 0; i < info.length; i++) {
         // 難度ごとの区切り
@@ -161,13 +160,13 @@ function makeBMSTable(info, mark, order) {
 
         }
 
-        // レベル表記
-        $("<td width='1%' align='center'>" + mark + x + "</td>").appendTo(str);
+        // LEVEL
+        $("<td width='2%' align='center'>" + mark + x + "</td>").appendTo(str);
 
-        // タイトル
-        $("<td width='20%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
+        // TITLE
+        $("<td width='30%'>" + "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i].md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
-      // アーティスト
+      	// ARTIST
         var astr = "";
         if(info[i].url != "" && info[i].url != null) {
         	if(info[i].artist != "" && info[i].artist != null) {
@@ -191,31 +190,23 @@ function makeBMSTable(info, mark, order) {
         		astr += "<br />(" + info[i].name_pack + ")";
         	}
         }
-        $("<td width='20%'>" + astr + "</td>").appendTo(str);
+        $("<td width='30%'>" + astr + "</td>").appendTo(str);
 
-      // 差分
-             if(info[i].url_diff != "" && info[i].url_diff != null) {
-     if(info[i].name_diff != "" && info[i].name_diff != null) {
-$("<td width='2%' align='center'><a href='" + info[i].url_diff + "'>" + info[i].name_diff + "</a></td>").appendTo(str);
-  } else {
-$("<td width='2%' align='center'><a href='" + info[i].url_diff + "'>DL</a></td>").appendTo(str);
-}
-  } else {
-      if(info[i].name_diff != "" && info[i].name_diff != null) {
-$("<td width='2%' align='center'>" + info[i].name_diff + "</td>").appendTo(str);
-  } else {
-$("<td width='2%' align='center'></td>").appendTo(str);
- }
- }
-
-      // Notes
+      	// NOTES
         $("<td width='2%' align='center'>" + info[i].notes + "</td>").appendTo(str);
 
-      // Total
+      	// TOTAL
         $("<td width='2%' align='center'>" + info[i].total + "</td>").appendTo(str);
 
-      // コメント
-        $("<td width='25%'>" + info[i].comment + "</div></td>").appendTo(str);
+	// T/N
+        $("<td width='2%' align='center'>" + info[i].totalnotes + "</td>").appendTo(str);
+
+      	// TAG
+        $("<td width='2%' align='center'>" + info[i].tag + "</td>").appendTo(str);
+
+      	// COMMENT
+        $("<td width='30%'>" + info[i].comment + "</div></td>").appendTo(str);
+
         str.appendTo(obj);
         count++;
     }
